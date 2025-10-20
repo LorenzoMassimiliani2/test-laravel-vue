@@ -25,6 +25,7 @@ FROM alpine:3.20
 RUN apk add --no-cache \
     nginx \
     php83 php83-fpm php83-opcache php83-pdo php83-pdo_mysql php83-mbstring php83-xml php83-ctype php83-json php83-tokenizer php83-fileinfo php83-session php83-curl php83-bcmath php83-intl php83-zip php83-dom \
+    php83-pgsql php83-pdo_pgsql \
     supervisor curl bash gettext
 
 ENV APP_DIR=/var/www/html
