@@ -2,6 +2,11 @@
 set -e
 cd /var/www/html
 
+# subito dopo "cd /var/www/html", aggiungi:
+: "${PORT:=8080}"  # default locale
+envsubst '$PORT' </etc/nginx/http.d/default.conf.template >/etc/nginx/http.d/default.conf
+
+
 # Se manca .env ma c'è .env.example, creane uno (alcuni comandi lo richiedono)
 if [ ! -f ".env" ] && [ -f ".env.example" ]; then
   cp .env.example .env

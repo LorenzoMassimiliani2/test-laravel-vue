@@ -36,7 +36,7 @@ COPY --from=vendor /app/vendor $APP_DIR/vendor
 COPY --from=frontend /app/public/build $APP_DIR/public/build
 
 # Nginx config (ascolta su $PORT per Railway)
-COPY ./deploy/nginx.conf /etc/nginx/http.d/default.conf
+COPY ./deploy/nginx.conf /etc/nginx/http.d/default.conf.template
 
 # Supervisor per avviare php-fpm + nginx
 COPY ./deploy/supervisord.conf /etc/supervisord.conf
